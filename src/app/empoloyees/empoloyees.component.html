@@ -1,0 +1,12 @@
+<h1>Employees</h1>
+<div *ngFor="let employee of employees">
+  {{employee.fname}} {{employee.lname}} - {{employee.state}}
+</div>
+<h1>Offices</h1>
+<div *ngFor="let office of offices">
+  {{office.city}} - {{office.state}}
+</div>
+<h1>Final Array</h1>
+<div *ngFor="let finalArray of finalArr">
+  {{finalArray.fname}} {{finalArray.lname}} - {{finalArray.city}}, {{finalArray.state}}
+</div>
