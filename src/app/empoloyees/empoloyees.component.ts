@@ -9,6 +9,8 @@ export class EmpoloyeesComponent implements OnInit {
 
   employees: any;
   offices: any;
+  finalArr = [];
+
   constructor() {
     this.employees = [
       { fname: "John", lname: "James", state: "New York" },
@@ -27,14 +29,13 @@ export class EmpoloyeesComponent implements OnInit {
       { state: "California", city: "Redding" }
     ]
 
-    let finalArr = [];
     let self = this;
     for (let g = 0; g < self.employees.length; g++) {
       for (let h = 0; h < self.offices.length; h++) {
-        if (self.employees[g]['state'] === self.offices[h]['state']) {
-          finalArr.push(self.employees[g]);
-          finalArr[finalArr.length - 1]['city'] = self.offices[h]['city'];
-          console.log(finalArr);
+        if (self.employees[g].state === self.offices[h].state) {
+          this.finalArr.push(self.employees[g]);
+          this.finalArr[this.finalArr.length - 1].city = self.offices[h].city;
+          console.log(this.finalArr);
           break;
         }
       }
